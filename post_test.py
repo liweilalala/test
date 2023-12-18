@@ -11,5 +11,5 @@ if __name__ == '__main__':
     }
     # 发送json
     post_json = json.dumps({'some': 'data'})
-    r1 = requests.post("http://10.99.192.72", data=post_json, headers=header)
+    r1 = requests.post("http://10.99.192.72/postTest", data=post_json, headers=header)
     print("r1返回的内容为-->" + r1.text)
