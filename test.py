@@ -7,7 +7,7 @@ result = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE,
 # 获取输出
 output = result.stdout
 print("Command Output1:\n", output)
-command = """kubectl get service -n kourier-system -o=jsonpath='{.status.url}'"""
+command = """kubectl get route test-hello -n test1 -o=jsonpath='{.status.url}'"""
 result = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, text=True)
 
 # 获取输出
