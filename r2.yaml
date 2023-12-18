@@ -1,0 +1,23 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  # service name
+  name: test-hello
+  namespace: test1
+spec:
+  template:
+    metadata:
+      # revision name
+      name: test-hello-0002
+      annotations:
+        autoscaling.knative.dev/minScale: "1"
+    spec:
+      containers:
+        - image: docker.io/buptliwei/test:v2
+          ports:
+            - containerPort: 9080
+
+  traffic:
+    - tag: v2
+      revisionName: test-hello-0002
+      percent: 100
