@@ -18,6 +18,6 @@ spec:
             - containerPort: 9080
 
   traffic:
-    - tag: v2
-      revisionName: test-hello-0002
-      percent: 100
+  - tag: v2
+    revisionName: test-hello-0002
+    percent: 100
